@@ -1,0 +1,174 @@
+2019.1:
+ * Version 3.0
+ * Feature Enhancement: Added LPM/DFE mode selection in xxv_ethernet IP
+ * Feature Enhancement: Added feature enabling AXI4 statistics counter
+ * Feature Enhancement: Added Versal GTWIZ support
+ * Feature Enhancement: Updated Auto Negotiation/Link Training Logic REgister space bit fields
+ * Revision change in one or more subcores
+
+2018.3.1:
+ * Version 2.5 (Rev. 1)
+ * Revision change in one or more subcores
+
+2018.3:
+ * Version 2.5
+ * Bug Fix: Updated AXI files for optiomization
+ * Bug Fix: Updated file for AN/LT Logic +RSFEC Runtime switching configuration
+ * Feature Enhancement: Added support FEC and Pause for MAC+PCS/PMA 32 bit variant
+ * Other: added new devices support
+ * Revision change in one or more subcores
+
+2018.2:
+ * Version 2.4 (Rev. 1)
+ * Bug Fix: Updated PCS top file for RSFEC connection issue AR70945
+ * Bug Fix: Updated MAC+PCS/PMA 32-bit file for ports
+ * Bug Fix: Updated RTL file for license timeout
+ * Bug Fix: Added XDC constraints for the tools not to optimize the AXI register map counters
+ * Feature Enhancement: Added support for SDK debugger
+ * Other: added new devices support
+ * Revision change in one or more subcores
+
+2018.1:
+ * Version 2.4
+ * Bug Fix: Updated example design files for
+ * Bug Fix: Updated clock domain for
+ * Bug Fix: Corrected timestamp connections when MAC+PCS BASER core generated for 2-step PTP, see AR70659
+ * Feature Enhancement: Added header files for
+ * Feature Enhancement: Added PCS/PMA 32 bit variant to build
+ * Feature Enhancement: Adding 802.1cm preemption feature for
+ * Feature Enhancement: Added MAC+PCS/PMA 32-bit 1step support
+ * Feature Enhancement: For Ethernet MAC-64 variant clk port removed and added tx_core_clk and rx_core_clk
+ * Revision change in one or more subcores
+
+2017.4:
+ * Version 2.3 (Rev. 1)
+ * Feature Enhancement: Updated for 976642
+ * Revision change in one or more subcores
+
+2017.3:
+ * Version 2.3
+ * Feature Enhancement: Updated for Bug fixes
+ * Feature Enhancement: Updated RSFEC and runtime switch dependency
+ * Feature Enhancement: Added RUNTIME SWITCHING support for UltraScale Plus -1 and -1L speed grades
+ * Feature Enhancement: Updated for IPI board assistance support for vcu118 board
+ * Feature Enhancement: TXOUTCLKSEL and RXOUTCLKSEL input ports should be driven with 3'b101
+ * Feature Enhancement: Removed tx_ptp_rxtstamp_in for ptp  1 step configuration
+ * Revision change in one or more subcores
+
+2017.2:
+ * Version 2.2
+ * Feature Enhancement: Added 25G support for KintexUS+ and ZynqUS+ -1 and -1L speed grades
+ * Feature Enhancement: Updated for
+ * Revision change in one or more subcores
+
+2017.1:
+ * Version 2.1
+ * Feature Enhancement: QPLL reset signals connected as per GTWIZ userguide recommandation
+ * Feature Enhancement: Added BUFG_GT to drive gt_ref clock output from Core
+ * Feature Enhancement: CR fixes
+ * Feature Enhancement: added 25G support for US+ -1 and -1L speed grades
+ * Feature Enhancement: Updated RSFEC hierarchy
+ * Feature Enhancement: Added new zynqultraScale plus devices.
+ * Feature Enhancement: Updated for
+ * Revision change in one or more subcores
+
+2016.4:
+ * Version 2.0 (Rev. 1)
+ * Feature Enhancement: QPLL reset signals connected as per GTWIZ userguide recommandation
+ * Feature Enhancement: CR fixes
+ * Revision change in one or more subcores
+
+2016.3:
+ * Version 2.0
+ * Port Change: New port gt_refclk_out by default and rx_ptp_tstamp_valid_out for 1588 configuration added as per request.
+ * Port Change: New port rx_serdes_clk_0, rx_serdes_clk_1, rx_serdes_clk_2, rx_serdes_clk_3, rx_serdes_reset_0, rx_serdes_reset_1, rx_serdes_reset_2, rx_serdes_reset_3 added for gt outof core configuration`
+ * Feature Enhancement: 1588 2 Step suport for PCS variant
+ * Feature Enhancement: Added IPI Designer Assistance support with block, connection and board automation
+ * Feature Enhancement: Added 25G support for Ultra Scale Plus -2LV speed grade devices
+ * Revision change in one or more subcores
+
+2016.2:
+ * Version 1.3
+ * Runtime Swithcable support for Ultrascale Plus added
+ * Support added support for xqku115 and 1M speed grade
+ * GT Out of Core Support
+ * Revision change in one or more subcores
+
+2016.1:
+ * Version 1.2
+ * Re-Enabled 3 and 4 cores for 25G
+ * 1588 1-step and 2-step support added for MAC/PCS-PMA only
+ * Support added for GTH for 10G
+ * Runtime Swithcable support added
+ * Added RS-FEC support for 25G
+ * Added -1HV support with 25G data rate
+ * Added support for Kintex Ultrascale, Kintex Ultrascale Plus and Zynq Ultrasclae Plus
+ * Timing closure may be difficult for 3 and 4 core with AN/LT enabled, see AR66787 for more information
+ * Changes to HDL library management to support Vivado IP simulation library
+ * Revision change in one or more subcores
+
+2015.4.2:
+ * Version 1.1
+ * No changes
+
+2015.4.1:
+ * Version 1.1
+ * No changes
+
+2015.4:
+ * Version 1.1
+ * Implementation failure fixes
+ * virtexuplus family support added
+ * Revision change in one or more subcores
+
+2015.3:
+ * Version 1.0
+ * MAC and PCS suppoert for 10G and 25G
+ * Base-KR and Base-R support
+ * AN/LT support
+
+(c) Copyright 2015 - 2019 Xilinx, Inc. All rights reserved.
+
+This file contains confidential and proprietary information
+of Xilinx, Inc. and is protected under U.S. and
+international copyright and other intellectual property
+laws.
+
+DISCLAIMER
+This disclaimer is not a license and does not grant any
+rights to the materials distributed herewith. Except as
+otherwise provided in a valid license issued to you by
+Xilinx, and to the maximum extent permitted by applicable
+law: (1) THESE MATERIALS ARE MADE AVAILABLE "AS IS" AND
+WITH ALL FAULTS, AND XILINX HEREBY DISCLAIMS ALL WARRANTIES
+AND CONDITIONS, EXPRESS, IMPLIED, OR STATUTORY, INCLUDING
+BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, NON-
+INFRINGEMENT, OR FITNESS FOR ANY PARTICULAR PURPOSE; and
+(2) Xilinx shall not be liable (whether in contract or tort,
+including negligence, or under any other theory of
+liability) for any loss or damage of any kind or nature
+related to, arising under or in connection with these
+materials, including for any direct, or any indirect,
+special, incidental, or consequential loss or damage
+(including loss of data, profits, goodwill, or any type of
+loss or damage suffered as a result of any action brought
+by a third party) even if such damage or loss was
+reasonably foreseeable or Xilinx had been advised of the
+possibility of the same.
+
+CRITICAL APPLICATIONS
+Xilinx products are not designed or intended to be fail-
+safe, or for use in any application requiring fail-safe
+performance, such as life-support or safety devices or
+systems, Class III medical devices, nuclear facilities,
+applications related to the deployment of airbags, or any
+other applications that could lead to death, personal
+injury, or severe property or environmental damage
+(individually and collectively, "Critical
+Applications"). Customer assumes the sole risk and
+liability of any use of Xilinx products in Critical
+Applications, subject only to applicable laws and
+regulations governing limitations on product liability.
+
+THIS COPYRIGHT NOTICE AND DISCLAIMER MUST BE RETAINED AS
+PART OF THIS FILE AT ALL TIMES.

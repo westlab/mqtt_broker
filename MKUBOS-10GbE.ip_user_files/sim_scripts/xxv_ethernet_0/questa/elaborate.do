@@ -1,0 +1,1 @@
+vopt -64 +acc -l elaborate.log -L xilinx_vip -L xil_defaultlib -L xpm -L gtwizard_ultrascale_v1_7_6 -L xxv_ethernet_v3_0_0 -L axi_vip_v1_1_5 -L zynq_ultra_ps_e_vip_v1_0_5 -L smartconnect_v1_0 -L xilinx_vip -L unisims_ver -L unimacro_ver -L secureip -work xil_defaultlib xil_defaultlib.xxv_ethernet_0 xil_defaultlib.glbl -o xxv_ethernet_0_opt

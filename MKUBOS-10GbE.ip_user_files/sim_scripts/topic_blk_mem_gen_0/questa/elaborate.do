@@ -1,0 +1,1 @@
+vopt -64 +acc -l elaborate.log -L xilinx_vip -L xil_defaultlib -L xpm -L blk_mem_gen_v8_4_3 -L axi_vip_v1_1_5 -L zynq_ultra_ps_e_vip_v1_0_5 -L smartconnect_v1_0 -L xilinx_vip -L unisims_ver -L unimacro_ver -L secureip -work xil_defaultlib xil_defaultlib.topic_blk_mem_gen_0 xil_defaultlib.glbl -o topic_blk_mem_gen_0_opt

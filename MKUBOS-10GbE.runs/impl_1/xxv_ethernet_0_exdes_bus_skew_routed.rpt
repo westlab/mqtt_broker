@@ -1,0 +1,945 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version      : Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
+| Date              : Sat Jun 12 18:26:55 2021
+| Host              : koutarou-ws running 64-bit Ubuntu 16.04.7 LTS
+| Command           : report_bus_skew -warn_on_violation -file xxv_ethernet_0_exdes_bus_skew_routed.rpt -pb xxv_ethernet_0_exdes_bus_skew_routed.pb -rpx xxv_ethernet_0_exdes_bus_skew_routed.rpx
+| Design            : xxv_ethernet_0_exdes
+| Device            : xczu19eg-ffvc1760
+| Speed File        : -2  PRODUCTION 1.25 05-09-2019
+| Temperature Grade : I
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Bus Skew Report
+
+Table of Contents
+-----------------
+1. Bus Skew Report Summary
+2. Bus Skew Report Per Constraint
+
+1. Bus Skew Report Summary
+--------------------------
+
+Id  Position  From                            To                              Corner  Requirement(ns)  Actual(ns)  Slack(ns)
+--  --------  ------------------------------  ------------------------------  ------  ---------------  ----------  ---------
+1   36        [get_cells {{fpga_core_inst/eth_mac_10g_fifo_inst/rx_fifo/fifo_inst/rd_ptr_reg_reg[*]} {fpga_core_inst/eth_mac_10g_fifo_inst/rx_fifo/fifo_inst/rd_ptr_gray_reg_reg[*]}}]
+                                              [get_cells {fpga_core_inst/eth_mac_10g_fifo_inst/rx_fifo/fifo_inst/rd_ptr_gray_sync1_reg_reg[*]}]
+                                                                              Slow              6.400       0.717      5.683
+2   38        [get_cells -quiet {{fpga_core_inst/eth_mac_10g_fifo_inst/rx_fifo/fifo_inst/wr_ptr_reg_reg[*]} {fpga_core_inst/eth_mac_10g_fifo_inst/rx_fifo/fifo_inst/wr_ptr_gray_reg_reg[*]} {fpga_core_inst/eth_mac_10g_fifo_inst/rx_fifo/fifo_inst/wr_ptr_sync_gray_reg_reg[*]}}]
+                                              [get_cells {fpga_core_inst/eth_mac_10g_fifo_inst/rx_fifo/fifo_inst/wr_ptr_gray_sync1_reg_reg[*]}]
+                                                                              Slow              6.400       1.060      5.340
+3   50        [get_cells {{fpga_core_inst/eth_mac_10g_fifo_inst/tx_fifo/fifo_inst/rd_ptr_reg_reg[*]} {fpga_core_inst/eth_mac_10g_fifo_inst/tx_fifo/fifo_inst/rd_ptr_gray_reg_reg[*]}}]
+                                              [get_cells {fpga_core_inst/eth_mac_10g_fifo_inst/tx_fifo/fifo_inst/rd_ptr_gray_sync1_reg_reg[*]}]
+                                                                              Slow              6.400       0.810      5.590
+4   52        [get_cells -quiet {{fpga_core_inst/eth_mac_10g_fifo_inst/tx_fifo/fifo_inst/wr_ptr_reg_reg[*]} {fpga_core_inst/eth_mac_10g_fifo_inst/tx_fifo/fifo_inst/wr_ptr_gray_reg_reg[*]} {fpga_core_inst/eth_mac_10g_fifo_inst/tx_fifo/fifo_inst/wr_ptr_sync_gray_reg_reg[*]}}]
+                                              [get_cells {fpga_core_inst/eth_mac_10g_fifo_inst/tx_fifo/fifo_inst/wr_ptr_gray_sync1_reg_reg[*]}]
+                                                                              Slow              6.400       1.066      5.334
+5   61        [get_cells {{fpga_core_inst/fifo_rx_mqtt/fifo_inst/rd_ptr_reg_reg[*]} {fpga_core_inst/fifo_rx_mqtt/fifo_inst/rd_ptr_gray_reg_reg[*]}}]
+                                              [get_cells {fpga_core_inst/fifo_rx_mqtt/fifo_inst/rd_ptr_gray_sync1_reg_reg[*]}]
+                                                                              Slow              6.400       0.991      5.409
+6   63        [get_cells -quiet {{fpga_core_inst/fifo_rx_mqtt/fifo_inst/wr_ptr_reg_reg[*]} {fpga_core_inst/fifo_rx_mqtt/fifo_inst/wr_ptr_gray_reg_reg[*]} {fpga_core_inst/fifo_rx_mqtt/fifo_inst/wr_ptr_sync_gray_reg_reg[*]}}]
+                                              [get_cells {fpga_core_inst/fifo_rx_mqtt/fifo_inst/wr_ptr_gray_sync1_reg_reg[*]}]
+                                                                              Slow             10.000       1.183      8.817
+7   74        [get_cells {{fpga_core_inst/fifo_tx_mqtt/fifo_inst/rd_ptr_reg_reg[*]} {fpga_core_inst/fifo_tx_mqtt/fifo_inst/rd_ptr_gray_reg_reg[*]}}]
+                                              [get_cells {fpga_core_inst/fifo_tx_mqtt/fifo_inst/rd_ptr_gray_sync1_reg_reg[*]}]
+                                                                              Slow             10.000       0.545      9.455
+8   76        [get_cells -quiet {{fpga_core_inst/fifo_tx_mqtt/fifo_inst/wr_ptr_reg_reg[*]} {fpga_core_inst/fifo_tx_mqtt/fifo_inst/wr_ptr_gray_reg_reg[*]} {fpga_core_inst/fifo_tx_mqtt/fifo_inst/wr_ptr_sync_gray_reg_reg[*]}}]
+                                              [get_cells {fpga_core_inst/fifo_tx_mqtt/fifo_inst/wr_ptr_gray_sync1_reg_reg[*]}]
+                                                                              Slow              6.400       0.563      5.837
+
+
+2. Bus Skew Report Per Constraint
+---------------------------------
+
+Id: 1
+set_bus_skew -from [get_cells {{fpga_core_inst/eth_mac_10g_fifo_inst/rx_fifo/fifo_inst/rd_ptr_reg_reg[*]} {fpga_core_inst/eth_mac_10g_fifo_inst/rx_fifo/fifo_inst/rd_ptr_gray_reg_reg[*]}}] -to [get_cells {fpga_core_inst/eth_mac_10g_fifo_inst/rx_fifo/fifo_inst/rd_ptr_gray_sync1_reg_reg[*]}] 6.400
+Requirement: 6.400ns
+Endpoints: 10
+
+From Clock            To Clock              Endpoint Pin                    Reference Pin                   Corner  Actual(ns)  Slack(ns)
+--------------------  --------------------  ------------------------------  ------------------------------  ------  ----------  ---------
+clk_out2_design_1_clk_wiz_0_0
+                      rxoutclk_out[0]       fpga_core_inst/eth_mac_10g_fifo_inst/rx_fifo/fifo_inst/rd_ptr_gray_sync1_reg_reg[4]/D
+                                                                            fpga_core_inst/eth_mac_10g_fifo_inst/rx_fifo/fifo_inst/rd_ptr_gray_sync1_reg_reg[7]/D
+                                                                                                            Slow         0.717      5.683
+
+
+Slack (MET) :             5.683ns  (requirement - actual skew)
+  Endpoint Source:        fpga_core_inst/eth_mac_10g_fifo_inst/rx_fifo/fifo_inst/rd_ptr_gray_reg_reg[4]/C
+                            (rising edge-triggered cell FDRE clocked by clk_out2_design_1_clk_wiz_0_0)
+  Endpoint Destination:   fpga_core_inst/eth_mac_10g_fifo_inst/rx_fifo/fifo_inst/rd_ptr_gray_sync1_reg_reg[4]/D
+                            (rising edge-triggered cell FDRE clocked by rxoutclk_out[0])
+  Reference Source:       fpga_core_inst/eth_mac_10g_fifo_inst/rx_fifo/fifo_inst/rd_ptr_gray_reg_reg[7]/C
+                            (rising edge-triggered cell FDRE clocked by clk_out2_design_1_clk_wiz_0_0)
+  Reference Destination:  fpga_core_inst/eth_mac_10g_fifo_inst/rx_fifo/fifo_inst/rd_ptr_gray_sync1_reg_reg[7]/D
+                            (rising edge-triggered cell FDRE clocked by rxoutclk_out[0])
+  Path Type:              Bus Skew (Max at Slow Process Corner)
+  Requirement:            6.400ns
+  Endpoint Relative Delay:    4.105ns
+  Reference Relative Delay:   3.632ns
+  Relative CRPR:             -0.097ns
+  Uncertainty:                0.147ns
+  Actual Bus Skew:            0.717ns  (Endpoint Relative Delay - Reference Relative Delay - Relative CRPR + Uncertainty)
+
+Endpoint path:
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out2_design_1_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    BUFG_PS_X0Y65        BUFG_PS                      0.000     0.000 r  design_1_wrapper/design_1_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+                         net (fo=1, routed)           2.409     2.409    design_1_wrapper/design_1_i/clk_wiz_0/inst/clk_in1
+    MMCM_X0Y7            MMCME4_ADV (Prop_MMCM_CLKIN1_CLKOUT1)
+                                                     -0.127     2.282 r  design_1_wrapper/design_1_i/clk_wiz_0/inst/mmcme4_adv_inst/CLKOUT1
+                         net (fo=1, routed)           0.250     2.532    design_1_wrapper/design_1_i/clk_wiz_0/inst/clk_out2_design_1_clk_wiz_0_0
+    BUFGCE_X0Y170        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     2.560 r  design_1_wrapper/design_1_i/clk_wiz_0/inst/clkout2_buf/O
+    X1Y3 (CLOCK_ROOT)    net (fo=12583, routed)       2.567     5.127    fpga_core_inst/eth_mac_10g_fifo_inst/rx_fifo/fifo_inst/logic_clk
+    SLICE_X25Y268        FDRE                                         r  fpga_core_inst/eth_mac_10g_fifo_inst/rx_fifo/fifo_inst/rd_ptr_gray_reg_reg[4]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X25Y268        FDRE (Prop_BFF_SLICEL_C_Q)
+                                                      0.079     5.206 r  fpga_core_inst/eth_mac_10g_fifo_inst/rx_fifo/fifo_inst/rd_ptr_gray_reg_reg[4]/Q
+                         net (fo=2, routed)           0.536     5.742    fpga_core_inst/eth_mac_10g_fifo_inst/rx_fifo/fifo_inst/rd_ptr_gray_reg_reg_n_0_[4]
+    SLICE_X26Y270        FDRE                                         r  fpga_core_inst/eth_mac_10g_fifo_inst/rx_fifo/fifo_inst/rd_ptr_gray_sync1_reg_reg[4]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock rxoutclk_out[0] rise edge)
+                                                      0.000     0.000 r  
+    GTYE4_CHANNEL_X0Y4   GTYE4_CHANNEL                0.000     0.000 r  DUT/inst/i_xxv_ethernet_0_gt/inst/gen_gtwizard_gtye4_top.xxv_ethernet_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[1].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/RXOUTCLK
+                         net (fo=2, routed)           0.079     0.079    DUT/inst/i_core_gtwiz_userclk_rx_inst_0/rxoutclk_out[0]
+    BUFG_GT_X0Y110       BUFG_GT (Prop_BUFG_GT_I_O)
+                                                      0.114     0.193 r  DUT/inst/i_core_gtwiz_userclk_rx_inst_0/gen_gtwiz_userclk_rx_main.bufg_gt_usrclk_inst/O
+    X0Y3 (CLOCK_ROOT)    net (fo=2260, routed)        1.419     1.612    fpga_core_inst/eth_mac_10g_fifo_inst/rx_fifo/fifo_inst/rx_clk
+    SLICE_X26Y270        FDRE                                         r  fpga_core_inst/eth_mac_10g_fifo_inst/rx_fifo/fifo_inst/rd_ptr_gray_sync1_reg_reg[4]/C
+                         clock pessimism              0.000     1.612    
+    SLICE_X26Y270        FDRE (Setup_HFF2_SLICEM_C_D)
+                                                      0.025     1.637    fpga_core_inst/eth_mac_10g_fifo_inst/rx_fifo/fifo_inst/rd_ptr_gray_sync1_reg_reg[4]
+  -------------------------------------------------------------------
+                         data arrival                           5.742    
+                         clock arrival                          1.637    
+  -------------------------------------------------------------------
+                         relative delay                         4.105    
+
+Reference path:
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out2_design_1_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    BUFG_PS_X0Y65        BUFG_PS                      0.000     0.000 r  design_1_wrapper/design_1_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+                         net (fo=1, routed)           2.165     2.165    design_1_wrapper/design_1_i/clk_wiz_0/inst/clk_in1
+    MMCM_X0Y7            MMCME4_ADV (Prop_MMCM_CLKIN1_CLKOUT1)
+                                                      0.630     2.795 r  design_1_wrapper/design_1_i/clk_wiz_0/inst/mmcme4_adv_inst/CLKOUT1
+                         net (fo=1, routed)           0.219     3.014    design_1_wrapper/design_1_i/clk_wiz_0/inst/clk_out2_design_1_clk_wiz_0_0
+    BUFGCE_X0Y170        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.024     3.038 r  design_1_wrapper/design_1_i/clk_wiz_0/inst/clkout2_buf/O
+    X1Y3 (CLOCK_ROOT)    net (fo=12583, routed)       2.302     5.340    fpga_core_inst/eth_mac_10g_fifo_inst/rx_fifo/fifo_inst/logic_clk
+    SLICE_X25Y267        FDRE                                         r  fpga_core_inst/eth_mac_10g_fifo_inst/rx_fifo/fifo_inst/rd_ptr_gray_reg_reg[7]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X25Y267        FDRE (Prop_BFF_SLICEL_C_Q)
+                                                      0.059     5.399 r  fpga_core_inst/eth_mac_10g_fifo_inst/rx_fifo/fifo_inst/rd_ptr_gray_reg_reg[7]/Q
+                         net (fo=2, routed)           0.125     5.524    fpga_core_inst/eth_mac_10g_fifo_inst/rx_fifo/fifo_inst/rd_ptr_gray_reg_reg_n_0_[7]
+    SLICE_X26Y269        FDRE                                         r  fpga_core_inst/eth_mac_10g_fifo_inst/rx_fifo/fifo_inst/rd_ptr_gray_sync1_reg_reg[7]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock rxoutclk_out[0] rise edge)
+                                                      0.000     0.000 r  
+    GTYE4_CHANNEL_X0Y4   GTYE4_CHANNEL                0.000     0.000 r  DUT/inst/i_xxv_ethernet_0_gt/inst/gen_gtwizard_gtye4_top.xxv_ethernet_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[1].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/RXOUTCLK
+                         net (fo=2, routed)           0.086     0.086    DUT/inst/i_core_gtwiz_userclk_rx_inst_0/rxoutclk_out[0]
+    BUFG_GT_X0Y110       BUFG_GT (Prop_BUFG_GT_I_O)
+                                                      0.130     0.216 r  DUT/inst/i_core_gtwiz_userclk_rx_inst_0/gen_gtwiz_userclk_rx_main.bufg_gt_usrclk_inst/O
+    X0Y3 (CLOCK_ROOT)    net (fo=2260, routed)        1.614     1.830    fpga_core_inst/eth_mac_10g_fifo_inst/rx_fifo/fifo_inst/rx_clk
+    SLICE_X26Y269        FDRE                                         r  fpga_core_inst/eth_mac_10g_fifo_inst/rx_fifo/fifo_inst/rd_ptr_gray_sync1_reg_reg[7]/C
+                         clock pessimism              0.000     1.830    
+    SLICE_X26Y269        FDRE (Hold_CFF2_SLICEM_C_D)
+                                                      0.062     1.892    fpga_core_inst/eth_mac_10g_fifo_inst/rx_fifo/fifo_inst/rd_ptr_gray_sync1_reg_reg[7]
+  -------------------------------------------------------------------
+                         data arrival                           5.524    
+                         clock arrival                          1.892    
+  -------------------------------------------------------------------
+                         relative delay                         3.632    
+
+
+
+Id: 2
+set_bus_skew -from [get_cells -quiet {{fpga_core_inst/eth_mac_10g_fifo_inst/rx_fifo/fifo_inst/wr_ptr_reg_reg[*]} {fpga_core_inst/eth_mac_10g_fifo_inst/rx_fifo/fifo_inst/wr_ptr_gray_reg_reg[*]} {fpga_core_inst/eth_mac_10g_fifo_inst/rx_fifo/fifo_inst/wr_ptr_sync_gray_reg_reg[*]}}] -to [get_cells {fpga_core_inst/eth_mac_10g_fifo_inst/rx_fifo/fifo_inst/wr_ptr_gray_sync1_reg_reg[*]}] 6.400
+Requirement: 6.400ns
+Endpoints: 10
+
+From Clock            To Clock              Endpoint Pin                    Reference Pin                   Corner  Actual(ns)  Slack(ns)
+--------------------  --------------------  ------------------------------  ------------------------------  ------  ----------  ---------
+rxoutclk_out[0]       clk_out2_design_1_clk_wiz_0_0
+                                            fpga_core_inst/eth_mac_10g_fifo_inst/rx_fifo/fifo_inst/wr_ptr_gray_sync1_reg_reg[8]/D
+                                                                            fpga_core_inst/eth_mac_10g_fifo_inst/rx_fifo/fifo_inst/wr_ptr_gray_sync1_reg_reg[9]/D
+                                                                                                            Slow         1.060      5.340
+
+
+Slack (MET) :             5.340ns  (requirement - actual skew)
+  Endpoint Source:        fpga_core_inst/eth_mac_10g_fifo_inst/rx_fifo/fifo_inst/wr_ptr_sync_gray_reg_reg[8]/C
+                            (rising edge-triggered cell FDRE clocked by rxoutclk_out[0])
+  Endpoint Destination:   fpga_core_inst/eth_mac_10g_fifo_inst/rx_fifo/fifo_inst/wr_ptr_gray_sync1_reg_reg[8]/D
+                            (rising edge-triggered cell FDRE clocked by clk_out2_design_1_clk_wiz_0_0)
+  Reference Source:       fpga_core_inst/eth_mac_10g_fifo_inst/rx_fifo/fifo_inst/wr_ptr_sync_gray_reg_reg[9]/C
+                            (rising edge-triggered cell FDRE clocked by rxoutclk_out[0])
+  Reference Destination:  fpga_core_inst/eth_mac_10g_fifo_inst/rx_fifo/fifo_inst/wr_ptr_gray_sync1_reg_reg[9]/D
+                            (rising edge-triggered cell FDRE clocked by clk_out2_design_1_clk_wiz_0_0)
+  Path Type:              Bus Skew (Max at Slow Process Corner)
+  Requirement:            6.400ns
+  Endpoint Relative Delay:   -2.623ns
+  Reference Relative Delay:  -3.437ns
+  Relative CRPR:             -0.099ns
+  Uncertainty:                0.147ns
+  Actual Bus Skew:            1.060ns  (Endpoint Relative Delay - Reference Relative Delay - Relative CRPR + Uncertainty)
+
+Endpoint path:
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock rxoutclk_out[0] rise edge)
+                                                      0.000     0.000 r  
+    GTYE4_CHANNEL_X0Y4   GTYE4_CHANNEL                0.000     0.000 r  DUT/inst/i_xxv_ethernet_0_gt/inst/gen_gtwizard_gtye4_top.xxv_ethernet_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[1].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/RXOUTCLK
+                         net (fo=2, routed)           0.086     0.086    DUT/inst/i_core_gtwiz_userclk_rx_inst_0/rxoutclk_out[0]
+    BUFG_GT_X0Y110       BUFG_GT (Prop_BUFG_GT_I_O)
+                                                      0.130     0.216 r  DUT/inst/i_core_gtwiz_userclk_rx_inst_0/gen_gtwiz_userclk_rx_main.bufg_gt_usrclk_inst/O
+    X0Y3 (CLOCK_ROOT)    net (fo=2260, routed)        1.603     1.819    fpga_core_inst/eth_mac_10g_fifo_inst/rx_fifo/fifo_inst/rx_clk
+    SLICE_X26Y270        FDRE                                         r  fpga_core_inst/eth_mac_10g_fifo_inst/rx_fifo/fifo_inst/wr_ptr_sync_gray_reg_reg[8]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X26Y270        FDRE (Prop_GFF_SLICEM_C_Q)
+                                                      0.078     1.897 r  fpga_core_inst/eth_mac_10g_fifo_inst/rx_fifo/fifo_inst/wr_ptr_sync_gray_reg_reg[8]/Q
+                         net (fo=1, routed)           0.842     2.739    fpga_core_inst/eth_mac_10g_fifo_inst/rx_fifo/fifo_inst/wr_ptr_sync_gray_reg_reg_n_0_[8]
+    SLICE_X26Y270        FDRE                                         r  fpga_core_inst/eth_mac_10g_fifo_inst/rx_fifo/fifo_inst/wr_ptr_gray_sync1_reg_reg[8]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out2_design_1_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    BUFG_PS_X0Y65        BUFG_PS                      0.000     0.000 r  design_1_wrapper/design_1_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+                         net (fo=1, routed)           2.165     2.165    design_1_wrapper/design_1_i/clk_wiz_0/inst/clk_in1
+    MMCM_X0Y7            MMCME4_ADV (Prop_MMCM_CLKIN1_CLKOUT1)
+                                                      0.630     2.795 r  design_1_wrapper/design_1_i/clk_wiz_0/inst/mmcme4_adv_inst/CLKOUT1
+                         net (fo=1, routed)           0.219     3.014    design_1_wrapper/design_1_i/clk_wiz_0/inst/clk_out2_design_1_clk_wiz_0_0
+    BUFGCE_X0Y170        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.024     3.038 r  design_1_wrapper/design_1_i/clk_wiz_0/inst/clkout2_buf/O
+    X1Y3 (CLOCK_ROOT)    net (fo=12583, routed)       2.299     5.337    fpga_core_inst/eth_mac_10g_fifo_inst/rx_fifo/fifo_inst/logic_clk
+    SLICE_X26Y270        FDRE                                         r  fpga_core_inst/eth_mac_10g_fifo_inst/rx_fifo/fifo_inst/wr_ptr_gray_sync1_reg_reg[8]/C
+                         clock pessimism              0.000     5.337    
+    SLICE_X26Y270        FDRE (Setup_BFF_SLICEM_C_D)
+                                                      0.025     5.362    fpga_core_inst/eth_mac_10g_fifo_inst/rx_fifo/fifo_inst/wr_ptr_gray_sync1_reg_reg[8]
+  -------------------------------------------------------------------
+                         data arrival                           2.739    
+                         clock arrival                          5.362    
+  -------------------------------------------------------------------
+                         relative delay                        -2.623    
+
+Reference path:
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock rxoutclk_out[0] rise edge)
+                                                      0.000     0.000 r  
+    GTYE4_CHANNEL_X0Y4   GTYE4_CHANNEL                0.000     0.000 r  DUT/inst/i_xxv_ethernet_0_gt/inst/gen_gtwizard_gtye4_top.xxv_ethernet_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[1].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/RXOUTCLK
+                         net (fo=2, routed)           0.079     0.079    DUT/inst/i_core_gtwiz_userclk_rx_inst_0/rxoutclk_out[0]
+    BUFG_GT_X0Y110       BUFG_GT (Prop_BUFG_GT_I_O)
+                                                      0.114     0.193 r  DUT/inst/i_core_gtwiz_userclk_rx_inst_0/gen_gtwiz_userclk_rx_main.bufg_gt_usrclk_inst/O
+    X0Y3 (CLOCK_ROOT)    net (fo=2260, routed)        1.419     1.612    fpga_core_inst/eth_mac_10g_fifo_inst/rx_fifo/fifo_inst/rx_clk
+    SLICE_X25Y272        FDRE                                         r  fpga_core_inst/eth_mac_10g_fifo_inst/rx_fifo/fifo_inst/wr_ptr_sync_gray_reg_reg[9]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X25Y272        FDRE (Prop_HFF_SLICEL_C_Q)
+                                                      0.058     1.670 r  fpga_core_inst/eth_mac_10g_fifo_inst/rx_fifo/fifo_inst/wr_ptr_sync_gray_reg_reg[9]/Q
+                         net (fo=1, routed)           0.086     1.756    fpga_core_inst/eth_mac_10g_fifo_inst/rx_fifo/fifo_inst/wr_ptr_sync_gray_reg_reg_n_0_[9]
+    SLICE_X26Y272        FDRE                                         r  fpga_core_inst/eth_mac_10g_fifo_inst/rx_fifo/fifo_inst/wr_ptr_gray_sync1_reg_reg[9]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out2_design_1_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    BUFG_PS_X0Y65        BUFG_PS                      0.000     0.000 r  design_1_wrapper/design_1_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+                         net (fo=1, routed)           2.409     2.409    design_1_wrapper/design_1_i/clk_wiz_0/inst/clk_in1
+    MMCM_X0Y7            MMCME4_ADV (Prop_MMCM_CLKIN1_CLKOUT1)
+                                                     -0.127     2.282 r  design_1_wrapper/design_1_i/clk_wiz_0/inst/mmcme4_adv_inst/CLKOUT1
+                         net (fo=1, routed)           0.250     2.532    design_1_wrapper/design_1_i/clk_wiz_0/inst/clk_out2_design_1_clk_wiz_0_0
+    BUFGCE_X0Y170        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     2.560 r  design_1_wrapper/design_1_i/clk_wiz_0/inst/clkout2_buf/O
+    X1Y3 (CLOCK_ROOT)    net (fo=12583, routed)       2.573     5.133    fpga_core_inst/eth_mac_10g_fifo_inst/rx_fifo/fifo_inst/logic_clk
+    SLICE_X26Y272        FDRE                                         r  fpga_core_inst/eth_mac_10g_fifo_inst/rx_fifo/fifo_inst/wr_ptr_gray_sync1_reg_reg[9]/C
+                         clock pessimism              0.000     5.133    
+    SLICE_X26Y272        FDRE (Hold_HFF_SLICEM_C_D)
+                                                      0.060     5.193    fpga_core_inst/eth_mac_10g_fifo_inst/rx_fifo/fifo_inst/wr_ptr_gray_sync1_reg_reg[9]
+  -------------------------------------------------------------------
+                         data arrival                           1.756    
+                         clock arrival                          5.193    
+  -------------------------------------------------------------------
+                         relative delay                        -3.437    
+
+
+
+Id: 3
+set_bus_skew -from [get_cells {{fpga_core_inst/eth_mac_10g_fifo_inst/tx_fifo/fifo_inst/rd_ptr_reg_reg[*]} {fpga_core_inst/eth_mac_10g_fifo_inst/tx_fifo/fifo_inst/rd_ptr_gray_reg_reg[*]}}] -to [get_cells {fpga_core_inst/eth_mac_10g_fifo_inst/tx_fifo/fifo_inst/rd_ptr_gray_sync1_reg_reg[*]}] 6.400
+Requirement: 6.400ns
+Endpoints: 10
+
+From Clock            To Clock              Endpoint Pin                    Reference Pin                   Corner  Actual(ns)  Slack(ns)
+--------------------  --------------------  ------------------------------  ------------------------------  ------  ----------  ---------
+txoutclk_out[0]       clk_out2_design_1_clk_wiz_0_0
+                                            fpga_core_inst/eth_mac_10g_fifo_inst/tx_fifo/fifo_inst/rd_ptr_gray_sync1_reg_reg[4]/D
+                                                                            fpga_core_inst/eth_mac_10g_fifo_inst/tx_fifo/fifo_inst/rd_ptr_gray_sync1_reg_reg[0]/D
+                                                                                                            Slow         0.810      5.590
+
+
+Slack (MET) :             5.590ns  (requirement - actual skew)
+  Endpoint Source:        fpga_core_inst/eth_mac_10g_fifo_inst/tx_fifo/fifo_inst/rd_ptr_gray_reg_reg[4]/C
+                            (rising edge-triggered cell FDRE clocked by txoutclk_out[0])
+  Endpoint Destination:   fpga_core_inst/eth_mac_10g_fifo_inst/tx_fifo/fifo_inst/rd_ptr_gray_sync1_reg_reg[4]/D
+                            (rising edge-triggered cell FDRE clocked by clk_out2_design_1_clk_wiz_0_0)
+  Reference Source:       fpga_core_inst/eth_mac_10g_fifo_inst/tx_fifo/fifo_inst/rd_ptr_gray_reg_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by txoutclk_out[0])
+  Reference Destination:  fpga_core_inst/eth_mac_10g_fifo_inst/tx_fifo/fifo_inst/rd_ptr_gray_sync1_reg_reg[0]/D
+                            (rising edge-triggered cell FDRE clocked by clk_out2_design_1_clk_wiz_0_0)
+  Path Type:              Bus Skew (Max at Slow Process Corner)
+  Requirement:            6.400ns
+  Endpoint Relative Delay:   -2.991ns
+  Reference Relative Delay:  -3.557ns
+  Relative CRPR:             -0.097ns
+  Uncertainty:                0.147ns
+  Actual Bus Skew:            0.810ns  (Endpoint Relative Delay - Reference Relative Delay - Relative CRPR + Uncertainty)
+
+Endpoint path:
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock txoutclk_out[0] rise edge)
+                                                      0.000     0.000 r  
+    GTYE4_CHANNEL_X0Y4   GTYE4_CHANNEL                0.000     0.000 r  DUT/inst/i_xxv_ethernet_0_gt/inst/gen_gtwizard_gtye4_top.xxv_ethernet_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[1].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/TXOUTCLK
+                         net (fo=2, routed)           0.085     0.085    DUT/inst/i_core_gtwiz_userclk_tx_inst_0/txoutclk_out[0]
+    BUFG_GT_X0Y112       BUFG_GT (Prop_BUFG_GT_I_O)
+                                                      0.130     0.215 r  DUT/inst/i_core_gtwiz_userclk_tx_inst_0/gen_gtwiz_userclk_tx_main.bufg_gt_usrclk_inst/O
+    X0Y3 (CLOCK_ROOT)    net (fo=790, routed)         1.566     1.781    fpga_core_inst/eth_mac_10g_fifo_inst/tx_fifo/fifo_inst/tx_clk
+    SLICE_X15Y248        FDRE                                         r  fpga_core_inst/eth_mac_10g_fifo_inst/tx_fifo/fifo_inst/rd_ptr_gray_reg_reg[4]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X15Y248        FDRE (Prop_CFF_SLICEL_C_Q)
+                                                      0.079     1.860 r  fpga_core_inst/eth_mac_10g_fifo_inst/tx_fifo/fifo_inst/rd_ptr_gray_reg_reg[4]/Q
+                         net (fo=2, routed)           0.620     2.480    fpga_core_inst/eth_mac_10g_fifo_inst/tx_fifo/fifo_inst/rd_ptr_gray_reg[4]
+    SLICE_X17Y248        FDRE                                         r  fpga_core_inst/eth_mac_10g_fifo_inst/tx_fifo/fifo_inst/rd_ptr_gray_sync1_reg_reg[4]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out2_design_1_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    BUFG_PS_X0Y65        BUFG_PS                      0.000     0.000 r  design_1_wrapper/design_1_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+                         net (fo=1, routed)           2.165     2.165    design_1_wrapper/design_1_i/clk_wiz_0/inst/clk_in1
+    MMCM_X0Y7            MMCME4_ADV (Prop_MMCM_CLKIN1_CLKOUT1)
+                                                      0.630     2.795 r  design_1_wrapper/design_1_i/clk_wiz_0/inst/mmcme4_adv_inst/CLKOUT1
+                         net (fo=1, routed)           0.219     3.014    design_1_wrapper/design_1_i/clk_wiz_0/inst/clk_out2_design_1_clk_wiz_0_0
+    BUFGCE_X0Y170        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.024     3.038 r  design_1_wrapper/design_1_i/clk_wiz_0/inst/clkout2_buf/O
+    X1Y3 (CLOCK_ROOT)    net (fo=12583, routed)       2.408     5.446    fpga_core_inst/eth_mac_10g_fifo_inst/tx_fifo/fifo_inst/logic_clk
+    SLICE_X17Y248        FDRE                                         r  fpga_core_inst/eth_mac_10g_fifo_inst/tx_fifo/fifo_inst/rd_ptr_gray_sync1_reg_reg[4]/C
+                         clock pessimism              0.000     5.446    
+    SLICE_X17Y248        FDRE (Setup_DFF2_SLICEL_C_D)
+                                                      0.025     5.471    fpga_core_inst/eth_mac_10g_fifo_inst/tx_fifo/fifo_inst/rd_ptr_gray_sync1_reg_reg[4]
+  -------------------------------------------------------------------
+                         data arrival                           2.480    
+                         clock arrival                          5.471    
+  -------------------------------------------------------------------
+                         relative delay                        -2.991    
+
+Reference path:
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock txoutclk_out[0] rise edge)
+                                                      0.000     0.000 r  
+    GTYE4_CHANNEL_X0Y4   GTYE4_CHANNEL                0.000     0.000 r  DUT/inst/i_xxv_ethernet_0_gt/inst/gen_gtwizard_gtye4_top.xxv_ethernet_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[1].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/TXOUTCLK
+                         net (fo=2, routed)           0.078     0.078    DUT/inst/i_core_gtwiz_userclk_tx_inst_0/txoutclk_out[0]
+    BUFG_GT_X0Y112       BUFG_GT (Prop_BUFG_GT_I_O)
+                                                      0.114     0.192 r  DUT/inst/i_core_gtwiz_userclk_tx_inst_0/gen_gtwiz_userclk_tx_main.bufg_gt_usrclk_inst/O
+    X0Y3 (CLOCK_ROOT)    net (fo=790, routed)         1.370     1.562    fpga_core_inst/eth_mac_10g_fifo_inst/tx_fifo/fifo_inst/tx_clk
+    SLICE_X15Y247        FDRE                                         r  fpga_core_inst/eth_mac_10g_fifo_inst/tx_fifo/fifo_inst/rd_ptr_gray_reg_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X15Y247        FDRE (Prop_CFF2_SLICEL_C_Q)
+                                                      0.059     1.621 r  fpga_core_inst/eth_mac_10g_fifo_inst/tx_fifo/fifo_inst/rd_ptr_gray_reg_reg[0]/Q
+                         net (fo=2, routed)           0.131     1.752    fpga_core_inst/eth_mac_10g_fifo_inst/tx_fifo/fifo_inst/rd_ptr_gray_reg[0]
+    SLICE_X18Y247        FDRE                                         r  fpga_core_inst/eth_mac_10g_fifo_inst/tx_fifo/fifo_inst/rd_ptr_gray_sync1_reg_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out2_design_1_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    BUFG_PS_X0Y65        BUFG_PS                      0.000     0.000 r  design_1_wrapper/design_1_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+                         net (fo=1, routed)           2.409     2.409    design_1_wrapper/design_1_i/clk_wiz_0/inst/clk_in1
+    MMCM_X0Y7            MMCME4_ADV (Prop_MMCM_CLKIN1_CLKOUT1)
+                                                     -0.127     2.282 r  design_1_wrapper/design_1_i/clk_wiz_0/inst/mmcme4_adv_inst/CLKOUT1
+                         net (fo=1, routed)           0.250     2.532    design_1_wrapper/design_1_i/clk_wiz_0/inst/clk_out2_design_1_clk_wiz_0_0
+    BUFGCE_X0Y170        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     2.560 r  design_1_wrapper/design_1_i/clk_wiz_0/inst/clkout2_buf/O
+    X1Y3 (CLOCK_ROOT)    net (fo=12583, routed)       2.687     5.247    fpga_core_inst/eth_mac_10g_fifo_inst/tx_fifo/fifo_inst/logic_clk
+    SLICE_X18Y247        FDRE                                         r  fpga_core_inst/eth_mac_10g_fifo_inst/tx_fifo/fifo_inst/rd_ptr_gray_sync1_reg_reg[0]/C
+                         clock pessimism              0.000     5.247    
+    SLICE_X18Y247        FDRE (Hold_HFF2_SLICEM_C_D)
+                                                      0.062     5.309    fpga_core_inst/eth_mac_10g_fifo_inst/tx_fifo/fifo_inst/rd_ptr_gray_sync1_reg_reg[0]
+  -------------------------------------------------------------------
+                         data arrival                           1.752    
+                         clock arrival                          5.309    
+  -------------------------------------------------------------------
+                         relative delay                        -3.557    
+
+
+
+Id: 4
+set_bus_skew -from [get_cells -quiet {{fpga_core_inst/eth_mac_10g_fifo_inst/tx_fifo/fifo_inst/wr_ptr_reg_reg[*]} {fpga_core_inst/eth_mac_10g_fifo_inst/tx_fifo/fifo_inst/wr_ptr_gray_reg_reg[*]} {fpga_core_inst/eth_mac_10g_fifo_inst/tx_fifo/fifo_inst/wr_ptr_sync_gray_reg_reg[*]}}] -to [get_cells {fpga_core_inst/eth_mac_10g_fifo_inst/tx_fifo/fifo_inst/wr_ptr_gray_sync1_reg_reg[*]}] 6.400
+Requirement: 6.400ns
+Endpoints: 10
+
+From Clock            To Clock              Endpoint Pin                    Reference Pin                   Corner  Actual(ns)  Slack(ns)
+--------------------  --------------------  ------------------------------  ------------------------------  ------  ----------  ---------
+clk_out2_design_1_clk_wiz_0_0
+                      txoutclk_out[0]       fpga_core_inst/eth_mac_10g_fifo_inst/tx_fifo/fifo_inst/wr_ptr_gray_sync1_reg_reg[9]/D
+                                                                            fpga_core_inst/eth_mac_10g_fifo_inst/tx_fifo/fifo_inst/wr_ptr_gray_sync1_reg_reg[1]/D
+                                                                                                            Slow         1.066      5.334
+
+
+Slack (MET) :             5.334ns  (requirement - actual skew)
+  Endpoint Source:        fpga_core_inst/eth_mac_10g_fifo_inst/tx_fifo/fifo_inst/wr_ptr_sync_gray_reg_reg[9]/C
+                            (rising edge-triggered cell FDRE clocked by clk_out2_design_1_clk_wiz_0_0)
+  Endpoint Destination:   fpga_core_inst/eth_mac_10g_fifo_inst/tx_fifo/fifo_inst/wr_ptr_gray_sync1_reg_reg[9]/D
+                            (rising edge-triggered cell FDRE clocked by txoutclk_out[0])
+  Reference Source:       fpga_core_inst/eth_mac_10g_fifo_inst/tx_fifo/fifo_inst/wr_ptr_sync_gray_reg_reg[1]/C
+                            (rising edge-triggered cell FDRE clocked by clk_out2_design_1_clk_wiz_0_0)
+  Reference Destination:  fpga_core_inst/eth_mac_10g_fifo_inst/tx_fifo/fifo_inst/wr_ptr_gray_sync1_reg_reg[1]/D
+                            (rising edge-triggered cell FDRE clocked by txoutclk_out[0])
+  Path Type:              Bus Skew (Max at Slow Process Corner)
+  Requirement:            6.400ns
+  Endpoint Relative Delay:    4.554ns
+  Reference Relative Delay:   3.782ns
+  Relative CRPR:             -0.147ns
+  Uncertainty:                0.147ns
+  Actual Bus Skew:            1.066ns  (Endpoint Relative Delay - Reference Relative Delay - Relative CRPR + Uncertainty)
+
+Endpoint path:
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out2_design_1_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    BUFG_PS_X0Y65        BUFG_PS                      0.000     0.000 r  design_1_wrapper/design_1_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+                         net (fo=1, routed)           2.409     2.409    design_1_wrapper/design_1_i/clk_wiz_0/inst/clk_in1
+    MMCM_X0Y7            MMCME4_ADV (Prop_MMCM_CLKIN1_CLKOUT1)
+                                                     -0.127     2.282 r  design_1_wrapper/design_1_i/clk_wiz_0/inst/mmcme4_adv_inst/CLKOUT1
+                         net (fo=1, routed)           0.250     2.532    design_1_wrapper/design_1_i/clk_wiz_0/inst/clk_out2_design_1_clk_wiz_0_0
+    BUFGCE_X0Y170        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     2.560 r  design_1_wrapper/design_1_i/clk_wiz_0/inst/clkout2_buf/O
+    X1Y3 (CLOCK_ROOT)    net (fo=12583, routed)       2.708     5.268    fpga_core_inst/eth_mac_10g_fifo_inst/tx_fifo/fifo_inst/logic_clk
+    SLICE_X17Y248        FDRE                                         r  fpga_core_inst/eth_mac_10g_fifo_inst/tx_fifo/fifo_inst/wr_ptr_sync_gray_reg_reg[9]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X17Y248        FDRE (Prop_BFF_SLICEL_C_Q)
+                                                      0.079     5.347 r  fpga_core_inst/eth_mac_10g_fifo_inst/tx_fifo/fifo_inst/wr_ptr_sync_gray_reg_reg[9]/Q
+                         net (fo=1, routed)           0.792     6.139    fpga_core_inst/eth_mac_10g_fifo_inst/tx_fifo/fifo_inst/wr_ptr_sync_gray_reg[9]
+    SLICE_X17Y247        FDRE                                         r  fpga_core_inst/eth_mac_10g_fifo_inst/tx_fifo/fifo_inst/wr_ptr_gray_sync1_reg_reg[9]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock txoutclk_out[0] rise edge)
+                                                      0.000     0.000 r  
+    GTYE4_CHANNEL_X0Y4   GTYE4_CHANNEL                0.000     0.000 r  DUT/inst/i_xxv_ethernet_0_gt/inst/gen_gtwizard_gtye4_top.xxv_ethernet_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[1].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/TXOUTCLK
+                         net (fo=2, routed)           0.078     0.078    DUT/inst/i_core_gtwiz_userclk_tx_inst_0/txoutclk_out[0]
+    BUFG_GT_X0Y112       BUFG_GT (Prop_BUFG_GT_I_O)
+                                                      0.114     0.192 r  DUT/inst/i_core_gtwiz_userclk_tx_inst_0/gen_gtwiz_userclk_tx_main.bufg_gt_usrclk_inst/O
+    X0Y3 (CLOCK_ROOT)    net (fo=790, routed)         1.368     1.560    fpga_core_inst/eth_mac_10g_fifo_inst/tx_fifo/fifo_inst/tx_clk
+    SLICE_X17Y247        FDRE                                         r  fpga_core_inst/eth_mac_10g_fifo_inst/tx_fifo/fifo_inst/wr_ptr_gray_sync1_reg_reg[9]/C
+                         clock pessimism              0.000     1.560    
+    SLICE_X17Y247        FDRE (Setup_GFF2_SLICEL_C_D)
+                                                      0.025     1.585    fpga_core_inst/eth_mac_10g_fifo_inst/tx_fifo/fifo_inst/wr_ptr_gray_sync1_reg_reg[9]
+  -------------------------------------------------------------------
+                         data arrival                           6.139    
+                         clock arrival                          1.585    
+  -------------------------------------------------------------------
+                         relative delay                         4.554    
+
+Reference path:
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out2_design_1_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    BUFG_PS_X0Y65        BUFG_PS                      0.000     0.000 r  design_1_wrapper/design_1_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+                         net (fo=1, routed)           2.165     2.165    design_1_wrapper/design_1_i/clk_wiz_0/inst/clk_in1
+    MMCM_X0Y7            MMCME4_ADV (Prop_MMCM_CLKIN1_CLKOUT1)
+                                                      0.630     2.795 r  design_1_wrapper/design_1_i/clk_wiz_0/inst/mmcme4_adv_inst/CLKOUT1
+                         net (fo=1, routed)           0.219     3.014    design_1_wrapper/design_1_i/clk_wiz_0/inst/clk_out2_design_1_clk_wiz_0_0
+    BUFGCE_X0Y170        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.024     3.038 r  design_1_wrapper/design_1_i/clk_wiz_0/inst/clkout2_buf/O
+    X1Y3 (CLOCK_ROOT)    net (fo=12583, routed)       2.393     5.431    fpga_core_inst/eth_mac_10g_fifo_inst/tx_fifo/fifo_inst/logic_clk
+    SLICE_X18Y246        FDRE                                         r  fpga_core_inst/eth_mac_10g_fifo_inst/tx_fifo/fifo_inst/wr_ptr_sync_gray_reg_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X18Y246        FDRE (Prop_HFF_SLICEM_C_Q)
+                                                      0.058     5.489 r  fpga_core_inst/eth_mac_10g_fifo_inst/tx_fifo/fifo_inst/wr_ptr_sync_gray_reg_reg[1]/Q
+                         net (fo=1, routed)           0.126     5.615    fpga_core_inst/eth_mac_10g_fifo_inst/tx_fifo/fifo_inst/wr_ptr_sync_gray_reg[1]
+    SLICE_X18Y246        FDRE                                         r  fpga_core_inst/eth_mac_10g_fifo_inst/tx_fifo/fifo_inst/wr_ptr_gray_sync1_reg_reg[1]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock txoutclk_out[0] rise edge)
+                                                      0.000     0.000 r  
+    GTYE4_CHANNEL_X0Y4   GTYE4_CHANNEL                0.000     0.000 r  DUT/inst/i_xxv_ethernet_0_gt/inst/gen_gtwizard_gtye4_top.xxv_ethernet_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[1].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/TXOUTCLK
+                         net (fo=2, routed)           0.085     0.085    DUT/inst/i_core_gtwiz_userclk_tx_inst_0/txoutclk_out[0]
+    BUFG_GT_X0Y112       BUFG_GT (Prop_BUFG_GT_I_O)
+                                                      0.130     0.215 r  DUT/inst/i_core_gtwiz_userclk_tx_inst_0/gen_gtwiz_userclk_tx_main.bufg_gt_usrclk_inst/O
+    X0Y3 (CLOCK_ROOT)    net (fo=790, routed)         1.558     1.773    fpga_core_inst/eth_mac_10g_fifo_inst/tx_fifo/fifo_inst/tx_clk
+    SLICE_X18Y246        FDRE                                         r  fpga_core_inst/eth_mac_10g_fifo_inst/tx_fifo/fifo_inst/wr_ptr_gray_sync1_reg_reg[1]/C
+                         clock pessimism              0.000     1.773    
+    SLICE_X18Y246        FDRE (Hold_DFF_SLICEM_C_D)
+                                                      0.060     1.833    fpga_core_inst/eth_mac_10g_fifo_inst/tx_fifo/fifo_inst/wr_ptr_gray_sync1_reg_reg[1]
+  -------------------------------------------------------------------
+                         data arrival                           5.615    
+                         clock arrival                          1.833    
+  -------------------------------------------------------------------
+                         relative delay                         3.782    
+
+
+
+Id: 5
+set_bus_skew -from [get_cells {{fpga_core_inst/fifo_rx_mqtt/fifo_inst/rd_ptr_reg_reg[*]} {fpga_core_inst/fifo_rx_mqtt/fifo_inst/rd_ptr_gray_reg_reg[*]}}] -to [get_cells {fpga_core_inst/fifo_rx_mqtt/fifo_inst/rd_ptr_gray_sync1_reg_reg[*]}] 6.400
+Requirement: 6.400ns
+Endpoints: 6
+
+From Clock            To Clock              Endpoint Pin                    Reference Pin                   Corner  Actual(ns)  Slack(ns)
+--------------------  --------------------  ------------------------------  ------------------------------  ------  ----------  ---------
+clk_out1_design_1_clk_wiz_0_0
+                      clk_out2_design_1_clk_wiz_0_0
+                                            fpga_core_inst/fifo_rx_mqtt/fifo_inst/rd_ptr_gray_sync1_reg_reg[3]/D
+                                                                            fpga_core_inst/fifo_rx_mqtt/fifo_inst/rd_ptr_gray_sync1_reg_reg[1]/D
+                                                                                                            Slow         0.991      5.409
+
+
+Slack (MET) :             5.409ns  (requirement - actual skew)
+  Endpoint Source:        fpga_core_inst/fifo_rx_mqtt/fifo_inst/rd_ptr_gray_reg_reg[3]/C
+                            (rising edge-triggered cell FDRE clocked by clk_out1_design_1_clk_wiz_0_0)
+  Endpoint Destination:   fpga_core_inst/fifo_rx_mqtt/fifo_inst/rd_ptr_gray_sync1_reg_reg[3]/D
+                            (rising edge-triggered cell FDRE clocked by clk_out2_design_1_clk_wiz_0_0)
+  Reference Source:       fpga_core_inst/fifo_rx_mqtt/fifo_inst/rd_ptr_gray_reg_reg[1]/C
+                            (rising edge-triggered cell FDRE clocked by clk_out1_design_1_clk_wiz_0_0)
+  Reference Destination:  fpga_core_inst/fifo_rx_mqtt/fifo_inst/rd_ptr_gray_sync1_reg_reg[1]/D
+                            (rising edge-triggered cell FDRE clocked by clk_out2_design_1_clk_wiz_0_0)
+  Path Type:              Bus Skew (Max at Slow Process Corner)
+  Requirement:            6.400ns
+  Endpoint Relative Delay:    1.534ns
+  Reference Relative Delay:   0.185ns
+  Relative CRPR:              0.544ns
+  Uncertainty:                0.186ns
+  Actual Bus Skew:            0.991ns  (Endpoint Relative Delay - Reference Relative Delay - Relative CRPR + Uncertainty)
+
+Endpoint path:
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_design_1_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    BUFG_PS_X0Y65        BUFG_PS                      0.000     0.000 r  design_1_wrapper/design_1_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+                         net (fo=1, routed)           2.409     2.409    design_1_wrapper/design_1_i/clk_wiz_0/inst/clk_in1
+    MMCM_X0Y7            MMCME4_ADV (Prop_MMCM_CLKIN1_CLKOUT0)
+                                                     -0.127     2.282 r  design_1_wrapper/design_1_i/clk_wiz_0/inst/mmcme4_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.244     2.526    design_1_wrapper/design_1_i/clk_wiz_0/inst/clk_out1_design_1_clk_wiz_0_0
+    BUFGCE_X0Y176        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     2.554 r  design_1_wrapper/design_1_i/clk_wiz_0/inst/clkout1_buf/O
+    X1Y2 (CLOCK_ROOT)    net (fo=9202, routed)        3.013     5.567    fpga_core_inst/fifo_rx_mqtt/fifo_inst/m_clk
+    SLICE_X38Y222        FDRE                                         r  fpga_core_inst/fifo_rx_mqtt/fifo_inst/rd_ptr_gray_reg_reg[3]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X38Y222        FDRE (Prop_DFF_SLICEM_C_Q)
+                                                      0.078     5.645 r  fpga_core_inst/fifo_rx_mqtt/fifo_inst/rd_ptr_gray_reg_reg[3]/Q
+                         net (fo=2, routed)           0.758     6.403    fpga_core_inst/fifo_rx_mqtt/fifo_inst/rd_ptr_gray_reg[3]
+    SLICE_X40Y221        FDRE                                         r  fpga_core_inst/fifo_rx_mqtt/fifo_inst/rd_ptr_gray_sync1_reg_reg[3]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out2_design_1_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    BUFG_PS_X0Y65        BUFG_PS                      0.000     0.000 r  design_1_wrapper/design_1_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+                         net (fo=1, routed)           2.165     2.165    design_1_wrapper/design_1_i/clk_wiz_0/inst/clk_in1
+    MMCM_X0Y7            MMCME4_ADV (Prop_MMCM_CLKIN1_CLKOUT1)
+                                                      0.630     2.795 r  design_1_wrapper/design_1_i/clk_wiz_0/inst/mmcme4_adv_inst/CLKOUT1
+                         net (fo=1, routed)           0.219     3.014    design_1_wrapper/design_1_i/clk_wiz_0/inst/clk_out2_design_1_clk_wiz_0_0
+    BUFGCE_X0Y170        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.024     3.038 r  design_1_wrapper/design_1_i/clk_wiz_0/inst/clkout2_buf/O
+    X1Y3 (CLOCK_ROOT)    net (fo=12583, routed)       2.319     5.357    fpga_core_inst/fifo_rx_mqtt/fifo_inst/s_clk
+    SLICE_X40Y221        FDRE                                         r  fpga_core_inst/fifo_rx_mqtt/fifo_inst/rd_ptr_gray_sync1_reg_reg[3]/C
+                         clock pessimism             -0.513     4.844    
+    SLICE_X40Y221        FDRE (Setup_CFF2_SLICEL_C_D)
+                                                      0.025     4.869    fpga_core_inst/fifo_rx_mqtt/fifo_inst/rd_ptr_gray_sync1_reg_reg[3]
+  -------------------------------------------------------------------
+                         data arrival                           6.403    
+                         clock arrival                          4.869    
+  -------------------------------------------------------------------
+                         relative delay                         1.534    
+
+Reference path:
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_design_1_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    BUFG_PS_X0Y65        BUFG_PS                      0.000     0.000 r  design_1_wrapper/design_1_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+                         net (fo=1, routed)           2.165     2.165    design_1_wrapper/design_1_i/clk_wiz_0/inst/clk_in1
+    MMCM_X0Y7            MMCME4_ADV (Prop_MMCM_CLKIN1_CLKOUT0)
+                                                      0.630     2.795 r  design_1_wrapper/design_1_i/clk_wiz_0/inst/mmcme4_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.214     3.009    design_1_wrapper/design_1_i/clk_wiz_0/inst/clk_out1_design_1_clk_wiz_0_0
+    BUFGCE_X0Y176        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.024     3.033 r  design_1_wrapper/design_1_i/clk_wiz_0/inst/clkout1_buf/O
+    X1Y2 (CLOCK_ROOT)    net (fo=9202, routed)        2.709     5.742    fpga_core_inst/fifo_rx_mqtt/fifo_inst/m_clk
+    SLICE_X39Y219        FDRE                                         r  fpga_core_inst/fifo_rx_mqtt/fifo_inst/rd_ptr_gray_reg_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X39Y219        FDRE (Prop_DFF_SLICEM_C_Q)
+                                                      0.058     5.800 r  fpga_core_inst/fifo_rx_mqtt/fifo_inst/rd_ptr_gray_reg_reg[1]/Q
+                         net (fo=2, routed)           0.110     5.910    fpga_core_inst/fifo_rx_mqtt/fifo_inst/rd_ptr_gray_reg[1]
+    SLICE_X39Y219        FDRE                                         r  fpga_core_inst/fifo_rx_mqtt/fifo_inst/rd_ptr_gray_sync1_reg_reg[1]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out2_design_1_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    BUFG_PS_X0Y65        BUFG_PS                      0.000     0.000 r  design_1_wrapper/design_1_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+                         net (fo=1, routed)           2.409     2.409    design_1_wrapper/design_1_i/clk_wiz_0/inst/clk_in1
+    MMCM_X0Y7            MMCME4_ADV (Prop_MMCM_CLKIN1_CLKOUT1)
+                                                     -0.127     2.282 r  design_1_wrapper/design_1_i/clk_wiz_0/inst/mmcme4_adv_inst/CLKOUT1
+                         net (fo=1, routed)           0.250     2.532    design_1_wrapper/design_1_i/clk_wiz_0/inst/clk_out2_design_1_clk_wiz_0_0
+    BUFGCE_X0Y170        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     2.560 r  design_1_wrapper/design_1_i/clk_wiz_0/inst/clkout2_buf/O
+    X1Y3 (CLOCK_ROOT)    net (fo=12583, routed)       2.590     5.150    fpga_core_inst/fifo_rx_mqtt/fifo_inst/s_clk
+    SLICE_X39Y219        FDRE                                         r  fpga_core_inst/fifo_rx_mqtt/fifo_inst/rd_ptr_gray_sync1_reg_reg[1]/C
+                         clock pessimism              0.513     5.663    
+    SLICE_X39Y219        FDRE (Hold_HFF2_SLICEM_C_D)
+                                                      0.062     5.725    fpga_core_inst/fifo_rx_mqtt/fifo_inst/rd_ptr_gray_sync1_reg_reg[1]
+  -------------------------------------------------------------------
+                         data arrival                           5.910    
+                         clock arrival                          5.725    
+  -------------------------------------------------------------------
+                         relative delay                         0.185    
+
+
+
+Id: 6
+set_bus_skew -from [get_cells -quiet {{fpga_core_inst/fifo_rx_mqtt/fifo_inst/wr_ptr_reg_reg[*]} {fpga_core_inst/fifo_rx_mqtt/fifo_inst/wr_ptr_gray_reg_reg[*]} {fpga_core_inst/fifo_rx_mqtt/fifo_inst/wr_ptr_sync_gray_reg_reg[*]}}] -to [get_cells {fpga_core_inst/fifo_rx_mqtt/fifo_inst/wr_ptr_gray_sync1_reg_reg[*]}] 10.000
+Requirement: 10.000ns
+Endpoints: 6
+
+From Clock            To Clock              Endpoint Pin                    Reference Pin                   Corner  Actual(ns)  Slack(ns)
+--------------------  --------------------  ------------------------------  ------------------------------  ------  ----------  ---------
+clk_out2_design_1_clk_wiz_0_0
+                      clk_out1_design_1_clk_wiz_0_0
+                                            fpga_core_inst/fifo_rx_mqtt/fifo_inst/wr_ptr_gray_sync1_reg_reg[3]/D
+                                                                            fpga_core_inst/fifo_rx_mqtt/fifo_inst/wr_ptr_gray_sync1_reg_reg[0]/D
+                                                                                                            Slow         1.183      8.817
+
+
+Slack (MET) :             8.817ns  (requirement - actual skew)
+  Endpoint Source:        fpga_core_inst/fifo_rx_mqtt/fifo_inst/wr_ptr_sync_gray_reg_reg[3]/C
+                            (rising edge-triggered cell FDRE clocked by clk_out2_design_1_clk_wiz_0_0)
+  Endpoint Destination:   fpga_core_inst/fifo_rx_mqtt/fifo_inst/wr_ptr_gray_sync1_reg_reg[3]/D
+                            (rising edge-triggered cell FDRE clocked by clk_out1_design_1_clk_wiz_0_0)
+  Reference Source:       fpga_core_inst/fifo_rx_mqtt/fifo_inst/wr_ptr_sync_gray_reg_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by clk_out2_design_1_clk_wiz_0_0)
+  Reference Destination:  fpga_core_inst/fifo_rx_mqtt/fifo_inst/wr_ptr_gray_sync1_reg_reg[0]/D
+                            (rising edge-triggered cell FDRE clocked by clk_out1_design_1_clk_wiz_0_0)
+  Path Type:              Bus Skew (Max at Slow Process Corner)
+  Requirement:            10.000ns
+  Endpoint Relative Delay:    0.992ns
+  Reference Relative Delay:  -0.609ns
+  Relative CRPR:              0.604ns
+  Uncertainty:                0.186ns
+  Actual Bus Skew:            1.183ns  (Endpoint Relative Delay - Reference Relative Delay - Relative CRPR + Uncertainty)
+
+Endpoint path:
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out2_design_1_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    BUFG_PS_X0Y65        BUFG_PS                      0.000     0.000 r  design_1_wrapper/design_1_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+                         net (fo=1, routed)           2.409     2.409    design_1_wrapper/design_1_i/clk_wiz_0/inst/clk_in1
+    MMCM_X0Y7            MMCME4_ADV (Prop_MMCM_CLKIN1_CLKOUT1)
+                                                     -0.127     2.282 r  design_1_wrapper/design_1_i/clk_wiz_0/inst/mmcme4_adv_inst/CLKOUT1
+                         net (fo=1, routed)           0.250     2.532    design_1_wrapper/design_1_i/clk_wiz_0/inst/clk_out2_design_1_clk_wiz_0_0
+    BUFGCE_X0Y170        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     2.560 r  design_1_wrapper/design_1_i/clk_wiz_0/inst/clkout2_buf/O
+    X1Y3 (CLOCK_ROOT)    net (fo=12583, routed)       2.609     5.169    fpga_core_inst/fifo_rx_mqtt/fifo_inst/s_clk
+    SLICE_X40Y221        FDRE                                         r  fpga_core_inst/fifo_rx_mqtt/fifo_inst/wr_ptr_sync_gray_reg_reg[3]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X40Y221        FDRE (Prop_DFF_SLICEL_C_Q)
+                                                      0.079     5.248 r  fpga_core_inst/fifo_rx_mqtt/fifo_inst/wr_ptr_sync_gray_reg_reg[3]/Q
+                         net (fo=1, routed)           0.999     6.247    fpga_core_inst/fifo_rx_mqtt/fifo_inst/wr_ptr_sync_gray_reg_reg_n_0_[3]
+    SLICE_X40Y222        FDRE                                         r  fpga_core_inst/fifo_rx_mqtt/fifo_inst/wr_ptr_gray_sync1_reg_reg[3]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_design_1_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    BUFG_PS_X0Y65        BUFG_PS                      0.000     0.000 r  design_1_wrapper/design_1_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+                         net (fo=1, routed)           2.165     2.165    design_1_wrapper/design_1_i/clk_wiz_0/inst/clk_in1
+    MMCM_X0Y7            MMCME4_ADV (Prop_MMCM_CLKIN1_CLKOUT0)
+                                                      0.630     2.795 r  design_1_wrapper/design_1_i/clk_wiz_0/inst/mmcme4_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.214     3.009    design_1_wrapper/design_1_i/clk_wiz_0/inst/clk_out1_design_1_clk_wiz_0_0
+    BUFGCE_X0Y176        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.024     3.033 r  design_1_wrapper/design_1_i/clk_wiz_0/inst/clkout1_buf/O
+    X1Y2 (CLOCK_ROOT)    net (fo=9202, routed)        2.710     5.743    fpga_core_inst/fifo_rx_mqtt/fifo_inst/m_clk
+    SLICE_X40Y222        FDRE                                         r  fpga_core_inst/fifo_rx_mqtt/fifo_inst/wr_ptr_gray_sync1_reg_reg[3]/C
+                         clock pessimism             -0.513     5.230    
+    SLICE_X40Y222        FDRE (Setup_EFF_SLICEL_C_D)
+                                                      0.025     5.255    fpga_core_inst/fifo_rx_mqtt/fifo_inst/wr_ptr_gray_sync1_reg_reg[3]
+  -------------------------------------------------------------------
+                         data arrival                           6.247    
+                         clock arrival                          5.255    
+  -------------------------------------------------------------------
+                         relative delay                         0.992    
+
+Reference path:
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out2_design_1_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    BUFG_PS_X0Y65        BUFG_PS                      0.000     0.000 r  design_1_wrapper/design_1_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+                         net (fo=1, routed)           2.165     2.165    design_1_wrapper/design_1_i/clk_wiz_0/inst/clk_in1
+    MMCM_X0Y7            MMCME4_ADV (Prop_MMCM_CLKIN1_CLKOUT1)
+                                                      0.630     2.795 r  design_1_wrapper/design_1_i/clk_wiz_0/inst/mmcme4_adv_inst/CLKOUT1
+                         net (fo=1, routed)           0.219     3.014    design_1_wrapper/design_1_i/clk_wiz_0/inst/clk_out2_design_1_clk_wiz_0_0
+    BUFGCE_X0Y170        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.024     3.038 r  design_1_wrapper/design_1_i/clk_wiz_0/inst/clkout2_buf/O
+    X1Y3 (CLOCK_ROOT)    net (fo=12583, routed)       2.315     5.353    fpga_core_inst/fifo_rx_mqtt/fifo_inst/s_clk
+    SLICE_X39Y222        FDRE                                         r  fpga_core_inst/fifo_rx_mqtt/fifo_inst/wr_ptr_sync_gray_reg_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X39Y222        FDRE (Prop_DFF2_SLICEM_C_Q)
+                                                      0.061     5.414 r  fpga_core_inst/fifo_rx_mqtt/fifo_inst/wr_ptr_sync_gray_reg_reg[0]/Q
+                         net (fo=1, routed)           0.131     5.545    fpga_core_inst/fifo_rx_mqtt/fifo_inst/wr_ptr_sync_gray_reg_reg_n_0_[0]
+    SLICE_X39Y222        FDRE                                         r  fpga_core_inst/fifo_rx_mqtt/fifo_inst/wr_ptr_gray_sync1_reg_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_design_1_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    BUFG_PS_X0Y65        BUFG_PS                      0.000     0.000 r  design_1_wrapper/design_1_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+                         net (fo=1, routed)           2.409     2.409    design_1_wrapper/design_1_i/clk_wiz_0/inst/clk_in1
+    MMCM_X0Y7            MMCME4_ADV (Prop_MMCM_CLKIN1_CLKOUT0)
+                                                     -0.127     2.282 r  design_1_wrapper/design_1_i/clk_wiz_0/inst/mmcme4_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.244     2.526    design_1_wrapper/design_1_i/clk_wiz_0/inst/clk_out1_design_1_clk_wiz_0_0
+    BUFGCE_X0Y176        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     2.554 r  design_1_wrapper/design_1_i/clk_wiz_0/inst/clkout1_buf/O
+    X1Y2 (CLOCK_ROOT)    net (fo=9202, routed)        3.025     5.579    fpga_core_inst/fifo_rx_mqtt/fifo_inst/m_clk
+    SLICE_X39Y222        FDRE                                         r  fpga_core_inst/fifo_rx_mqtt/fifo_inst/wr_ptr_gray_sync1_reg_reg[0]/C
+                         clock pessimism              0.513     6.092    
+    SLICE_X39Y222        FDRE (Hold_HFF2_SLICEM_C_D)
+                                                      0.062     6.154    fpga_core_inst/fifo_rx_mqtt/fifo_inst/wr_ptr_gray_sync1_reg_reg[0]
+  -------------------------------------------------------------------
+                         data arrival                           5.545    
+                         clock arrival                          6.154    
+  -------------------------------------------------------------------
+                         relative delay                        -0.609    
+
+
+
+Id: 7
+set_bus_skew -from [get_cells {{fpga_core_inst/fifo_tx_mqtt/fifo_inst/rd_ptr_reg_reg[*]} {fpga_core_inst/fifo_tx_mqtt/fifo_inst/rd_ptr_gray_reg_reg[*]}}] -to [get_cells {fpga_core_inst/fifo_tx_mqtt/fifo_inst/rd_ptr_gray_sync1_reg_reg[*]}] 10.000
+Requirement: 10.000ns
+Endpoints: 4
+
+From Clock            To Clock              Endpoint Pin                    Reference Pin                   Corner  Actual(ns)  Slack(ns)
+--------------------  --------------------  ------------------------------  ------------------------------  ------  ----------  ---------
+clk_out2_design_1_clk_wiz_0_0
+                      clk_out1_design_1_clk_wiz_0_0
+                                            fpga_core_inst/fifo_tx_mqtt/fifo_inst/rd_ptr_gray_sync1_reg_reg[1]/D
+                                                                            fpga_core_inst/fifo_tx_mqtt/fifo_inst/rd_ptr_gray_sync1_reg_reg[3]/D
+                                                                                                            Slow         0.545      9.455
+
+
+Slack (MET) :             9.455ns  (requirement - actual skew)
+  Endpoint Source:        fpga_core_inst/fifo_tx_mqtt/fifo_inst/rd_ptr_gray_reg_reg[1]/C
+                            (rising edge-triggered cell FDRE clocked by clk_out2_design_1_clk_wiz_0_0)
+  Endpoint Destination:   fpga_core_inst/fifo_tx_mqtt/fifo_inst/rd_ptr_gray_sync1_reg_reg[1]/D
+                            (rising edge-triggered cell FDRE clocked by clk_out1_design_1_clk_wiz_0_0)
+  Reference Source:       fpga_core_inst/fifo_tx_mqtt/fifo_inst/rd_ptr_gray_reg_reg[3]/C
+                            (rising edge-triggered cell FDRE clocked by clk_out2_design_1_clk_wiz_0_0)
+  Reference Destination:  fpga_core_inst/fifo_tx_mqtt/fifo_inst/rd_ptr_gray_sync1_reg_reg[3]/D
+                            (rising edge-triggered cell FDRE clocked by clk_out1_design_1_clk_wiz_0_0)
+  Path Type:              Bus Skew (Max at Slow Process Corner)
+  Requirement:            10.000ns
+  Endpoint Relative Delay:    0.263ns
+  Reference Relative Delay:  -0.590ns
+  Relative CRPR:              0.494ns
+  Uncertainty:                0.186ns
+  Actual Bus Skew:            0.545ns  (Endpoint Relative Delay - Reference Relative Delay - Relative CRPR + Uncertainty)
+
+Endpoint path:
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out2_design_1_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    BUFG_PS_X0Y65        BUFG_PS                      0.000     0.000 r  design_1_wrapper/design_1_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+                         net (fo=1, routed)           2.409     2.409    design_1_wrapper/design_1_i/clk_wiz_0/inst/clk_in1
+    MMCM_X0Y7            MMCME4_ADV (Prop_MMCM_CLKIN1_CLKOUT1)
+                                                     -0.127     2.282 r  design_1_wrapper/design_1_i/clk_wiz_0/inst/mmcme4_adv_inst/CLKOUT1
+                         net (fo=1, routed)           0.250     2.532    design_1_wrapper/design_1_i/clk_wiz_0/inst/clk_out2_design_1_clk_wiz_0_0
+    BUFGCE_X0Y170        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     2.560 r  design_1_wrapper/design_1_i/clk_wiz_0/inst/clkout2_buf/O
+    X1Y3 (CLOCK_ROOT)    net (fo=12583, routed)       2.543     5.103    fpga_core_inst/fifo_tx_mqtt/fifo_inst/m_clk
+    SLICE_X26Y225        FDRE                                         r  fpga_core_inst/fifo_tx_mqtt/fifo_inst/rd_ptr_gray_reg_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X26Y225        FDRE (Prop_DFF_SLICEM_C_Q)
+                                                      0.078     5.181 r  fpga_core_inst/fifo_tx_mqtt/fifo_inst/rd_ptr_gray_reg_reg[1]/Q
+                         net (fo=2, routed)           0.305     5.486    fpga_core_inst/fifo_tx_mqtt/fifo_inst/rd_ptr_gray_reg[1]
+    SLICE_X28Y225        FDRE                                         r  fpga_core_inst/fifo_tx_mqtt/fifo_inst/rd_ptr_gray_sync1_reg_reg[1]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_design_1_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    BUFG_PS_X0Y65        BUFG_PS                      0.000     0.000 r  design_1_wrapper/design_1_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+                         net (fo=1, routed)           2.165     2.165    design_1_wrapper/design_1_i/clk_wiz_0/inst/clk_in1
+    MMCM_X0Y7            MMCME4_ADV (Prop_MMCM_CLKIN1_CLKOUT0)
+                                                      0.630     2.795 r  design_1_wrapper/design_1_i/clk_wiz_0/inst/mmcme4_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.214     3.009    design_1_wrapper/design_1_i/clk_wiz_0/inst/clk_out1_design_1_clk_wiz_0_0
+    BUFGCE_X0Y176        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.024     3.033 r  design_1_wrapper/design_1_i/clk_wiz_0/inst/clkout1_buf/O
+    X1Y2 (CLOCK_ROOT)    net (fo=9202, routed)        2.678     5.711    fpga_core_inst/fifo_tx_mqtt/fifo_inst/s_clk
+    SLICE_X28Y225        FDRE                                         r  fpga_core_inst/fifo_tx_mqtt/fifo_inst/rd_ptr_gray_sync1_reg_reg[1]/C
+                         clock pessimism             -0.513     5.198    
+    SLICE_X28Y225        FDRE (Setup_HFF2_SLICEL_C_D)
+                                                      0.025     5.223    fpga_core_inst/fifo_tx_mqtt/fifo_inst/rd_ptr_gray_sync1_reg_reg[1]
+  -------------------------------------------------------------------
+                         data arrival                           5.486    
+                         clock arrival                          5.223    
+  -------------------------------------------------------------------
+                         relative delay                         0.263    
+
+Reference path:
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out2_design_1_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    BUFG_PS_X0Y65        BUFG_PS                      0.000     0.000 r  design_1_wrapper/design_1_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+                         net (fo=1, routed)           2.165     2.165    design_1_wrapper/design_1_i/clk_wiz_0/inst/clk_in1
+    MMCM_X0Y7            MMCME4_ADV (Prop_MMCM_CLKIN1_CLKOUT1)
+                                                      0.630     2.795 r  design_1_wrapper/design_1_i/clk_wiz_0/inst/mmcme4_adv_inst/CLKOUT1
+                         net (fo=1, routed)           0.219     3.014    design_1_wrapper/design_1_i/clk_wiz_0/inst/clk_out2_design_1_clk_wiz_0_0
+    BUFGCE_X0Y170        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.024     3.038 r  design_1_wrapper/design_1_i/clk_wiz_0/inst/clkout2_buf/O
+    X1Y3 (CLOCK_ROOT)    net (fo=12583, routed)       2.286     5.324    fpga_core_inst/fifo_tx_mqtt/fifo_inst/m_clk
+    SLICE_X29Y226        FDRE                                         r  fpga_core_inst/fifo_tx_mqtt/fifo_inst/rd_ptr_gray_reg_reg[3]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X29Y226        FDRE (Prop_HFF2_SLICEM_C_Q)
+                                                      0.059     5.383 r  fpga_core_inst/fifo_tx_mqtt/fifo_inst/rd_ptr_gray_reg_reg[3]/Q
+                         net (fo=5, routed)           0.145     5.528    fpga_core_inst/fifo_tx_mqtt/fifo_inst/rd_ptr_gray_reg[3]
+    SLICE_X29Y225        FDRE                                         r  fpga_core_inst/fifo_tx_mqtt/fifo_inst/rd_ptr_gray_sync1_reg_reg[3]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_design_1_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    BUFG_PS_X0Y65        BUFG_PS                      0.000     0.000 r  design_1_wrapper/design_1_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+                         net (fo=1, routed)           2.409     2.409    design_1_wrapper/design_1_i/clk_wiz_0/inst/clk_in1
+    MMCM_X0Y7            MMCME4_ADV (Prop_MMCM_CLKIN1_CLKOUT0)
+                                                     -0.127     2.282 r  design_1_wrapper/design_1_i/clk_wiz_0/inst/mmcme4_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.244     2.526    design_1_wrapper/design_1_i/clk_wiz_0/inst/clk_out1_design_1_clk_wiz_0_0
+    BUFGCE_X0Y176        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     2.554 r  design_1_wrapper/design_1_i/clk_wiz_0/inst/clkout1_buf/O
+    X1Y2 (CLOCK_ROOT)    net (fo=9202, routed)        2.989     5.543    fpga_core_inst/fifo_tx_mqtt/fifo_inst/s_clk
+    SLICE_X29Y225        FDRE                                         r  fpga_core_inst/fifo_tx_mqtt/fifo_inst/rd_ptr_gray_sync1_reg_reg[3]/C
+                         clock pessimism              0.513     6.056    
+    SLICE_X29Y225        FDRE (Hold_GFF2_SLICEM_C_D)
+                                                      0.062     6.118    fpga_core_inst/fifo_tx_mqtt/fifo_inst/rd_ptr_gray_sync1_reg_reg[3]
+  -------------------------------------------------------------------
+                         data arrival                           5.528    
+                         clock arrival                          6.118    
+  -------------------------------------------------------------------
+                         relative delay                        -0.590    
+
+
+
+Id: 8
+set_bus_skew -from [get_cells -quiet {{fpga_core_inst/fifo_tx_mqtt/fifo_inst/wr_ptr_reg_reg[*]} {fpga_core_inst/fifo_tx_mqtt/fifo_inst/wr_ptr_gray_reg_reg[*]} {fpga_core_inst/fifo_tx_mqtt/fifo_inst/wr_ptr_sync_gray_reg_reg[*]}}] -to [get_cells {fpga_core_inst/fifo_tx_mqtt/fifo_inst/wr_ptr_gray_sync1_reg_reg[*]}] 6.400
+Requirement: 6.400ns
+Endpoints: 4
+
+From Clock            To Clock              Endpoint Pin                    Reference Pin                   Corner  Actual(ns)  Slack(ns)
+--------------------  --------------------  ------------------------------  ------------------------------  ------  ----------  ---------
+clk_out1_design_1_clk_wiz_0_0
+                      clk_out2_design_1_clk_wiz_0_0
+                                            fpga_core_inst/fifo_tx_mqtt/fifo_inst/wr_ptr_gray_sync1_reg_reg[1]/D
+                                                                            fpga_core_inst/fifo_tx_mqtt/fifo_inst/wr_ptr_gray_sync1_reg_reg[2]/D
+                                                                                                            Slow         0.563      5.837
+
+
+Slack (MET) :             5.837ns  (requirement - actual skew)
+  Endpoint Source:        fpga_core_inst/fifo_tx_mqtt/fifo_inst/wr_ptr_gray_reg_reg[1]/C
+                            (rising edge-triggered cell FDRE clocked by clk_out1_design_1_clk_wiz_0_0)
+  Endpoint Destination:   fpga_core_inst/fifo_tx_mqtt/fifo_inst/wr_ptr_gray_sync1_reg_reg[1]/D
+                            (rising edge-triggered cell FDRE clocked by clk_out2_design_1_clk_wiz_0_0)
+  Reference Source:       fpga_core_inst/fifo_tx_mqtt/fifo_inst/wr_ptr_gray_reg_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by clk_out1_design_1_clk_wiz_0_0)
+  Reference Destination:  fpga_core_inst/fifo_tx_mqtt/fifo_inst/wr_ptr_gray_sync1_reg_reg[2]/D
+                            (rising edge-triggered cell FDRE clocked by clk_out2_design_1_clk_wiz_0_0)
+  Path Type:              Bus Skew (Max at Slow Process Corner)
+  Requirement:            6.400ns
+  Endpoint Relative Delay:    1.098ns
+  Reference Relative Delay:   0.180ns
+  Relative CRPR:              0.541ns
+  Uncertainty:                0.186ns
+  Actual Bus Skew:            0.563ns  (Endpoint Relative Delay - Reference Relative Delay - Relative CRPR + Uncertainty)
+
+Endpoint path:
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_design_1_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    BUFG_PS_X0Y65        BUFG_PS                      0.000     0.000 r  design_1_wrapper/design_1_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+                         net (fo=1, routed)           2.409     2.409    design_1_wrapper/design_1_i/clk_wiz_0/inst/clk_in1
+    MMCM_X0Y7            MMCME4_ADV (Prop_MMCM_CLKIN1_CLKOUT0)
+                                                     -0.127     2.282 r  design_1_wrapper/design_1_i/clk_wiz_0/inst/mmcme4_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.244     2.526    design_1_wrapper/design_1_i/clk_wiz_0/inst/clk_out1_design_1_clk_wiz_0_0
+    BUFGCE_X0Y176        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     2.554 r  design_1_wrapper/design_1_i/clk_wiz_0/inst/clkout1_buf/O
+    X1Y2 (CLOCK_ROOT)    net (fo=9202, routed)        2.986     5.540    fpga_core_inst/fifo_tx_mqtt/fifo_inst/s_clk
+    SLICE_X28Y225        FDRE                                         r  fpga_core_inst/fifo_tx_mqtt/fifo_inst/wr_ptr_gray_reg_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X28Y225        FDRE (Prop_DFF_SLICEL_C_Q)
+                                                      0.079     5.619 r  fpga_core_inst/fifo_tx_mqtt/fifo_inst/wr_ptr_gray_reg_reg[1]/Q
+                         net (fo=2, routed)           0.314     5.933    fpga_core_inst/fifo_tx_mqtt/fifo_inst/wr_ptr_gray_reg[1]
+    SLICE_X28Y227        FDRE                                         r  fpga_core_inst/fifo_tx_mqtt/fifo_inst/wr_ptr_gray_sync1_reg_reg[1]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out2_design_1_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    BUFG_PS_X0Y65        BUFG_PS                      0.000     0.000 r  design_1_wrapper/design_1_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+                         net (fo=1, routed)           2.165     2.165    design_1_wrapper/design_1_i/clk_wiz_0/inst/clk_in1
+    MMCM_X0Y7            MMCME4_ADV (Prop_MMCM_CLKIN1_CLKOUT1)
+                                                      0.630     2.795 r  design_1_wrapper/design_1_i/clk_wiz_0/inst/mmcme4_adv_inst/CLKOUT1
+                         net (fo=1, routed)           0.219     3.014    design_1_wrapper/design_1_i/clk_wiz_0/inst/clk_out2_design_1_clk_wiz_0_0
+    BUFGCE_X0Y170        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.024     3.038 r  design_1_wrapper/design_1_i/clk_wiz_0/inst/clkout2_buf/O
+    X1Y3 (CLOCK_ROOT)    net (fo=12583, routed)       2.285     5.323    fpga_core_inst/fifo_tx_mqtt/fifo_inst/m_clk
+    SLICE_X28Y227        FDRE                                         r  fpga_core_inst/fifo_tx_mqtt/fifo_inst/wr_ptr_gray_sync1_reg_reg[1]/C
+                         clock pessimism             -0.513     4.810    
+    SLICE_X28Y227        FDRE (Setup_HFF2_SLICEL_C_D)
+                                                      0.025     4.835    fpga_core_inst/fifo_tx_mqtt/fifo_inst/wr_ptr_gray_sync1_reg_reg[1]
+  -------------------------------------------------------------------
+                         data arrival                           5.933    
+                         clock arrival                          4.835    
+  -------------------------------------------------------------------
+                         relative delay                         1.098    
+
+Reference path:
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_design_1_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    BUFG_PS_X0Y65        BUFG_PS                      0.000     0.000 r  design_1_wrapper/design_1_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+                         net (fo=1, routed)           2.165     2.165    design_1_wrapper/design_1_i/clk_wiz_0/inst/clk_in1
+    MMCM_X0Y7            MMCME4_ADV (Prop_MMCM_CLKIN1_CLKOUT0)
+                                                      0.630     2.795 r  design_1_wrapper/design_1_i/clk_wiz_0/inst/mmcme4_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.214     3.009    design_1_wrapper/design_1_i/clk_wiz_0/inst/clk_out1_design_1_clk_wiz_0_0
+    BUFGCE_X0Y176        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.024     3.033 r  design_1_wrapper/design_1_i/clk_wiz_0/inst/clkout1_buf/O
+    X1Y2 (CLOCK_ROOT)    net (fo=9202, routed)        2.672     5.705    fpga_core_inst/fifo_tx_mqtt/fifo_inst/s_clk
+    SLICE_X28Y227        FDRE                                         r  fpga_core_inst/fifo_tx_mqtt/fifo_inst/wr_ptr_gray_reg_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X28Y227        FDRE (Prop_DFF_SLICEL_C_Q)
+                                                      0.059     5.764 r  fpga_core_inst/fifo_tx_mqtt/fifo_inst/wr_ptr_gray_reg_reg[2]/Q
+                         net (fo=2, routed)           0.116     5.880    fpga_core_inst/fifo_tx_mqtt/fifo_inst/wr_ptr_gray_reg[2]
+    SLICE_X29Y226        FDRE                                         r  fpga_core_inst/fifo_tx_mqtt/fifo_inst/wr_ptr_gray_sync1_reg_reg[2]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out2_design_1_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    BUFG_PS_X0Y65        BUFG_PS                      0.000     0.000 r  design_1_wrapper/design_1_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+                         net (fo=1, routed)           2.409     2.409    design_1_wrapper/design_1_i/clk_wiz_0/inst/clk_in1
+    MMCM_X0Y7            MMCME4_ADV (Prop_MMCM_CLKIN1_CLKOUT1)
+                                                     -0.127     2.282 r  design_1_wrapper/design_1_i/clk_wiz_0/inst/mmcme4_adv_inst/CLKOUT1
+                         net (fo=1, routed)           0.250     2.532    design_1_wrapper/design_1_i/clk_wiz_0/inst/clk_out2_design_1_clk_wiz_0_0
+    BUFGCE_X0Y170        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     2.560 r  design_1_wrapper/design_1_i/clk_wiz_0/inst/clkout2_buf/O
+    X1Y3 (CLOCK_ROOT)    net (fo=12583, routed)       2.565     5.125    fpga_core_inst/fifo_tx_mqtt/fifo_inst/m_clk
+    SLICE_X29Y226        FDRE                                         r  fpga_core_inst/fifo_tx_mqtt/fifo_inst/wr_ptr_gray_sync1_reg_reg[2]/C
+                         clock pessimism              0.513     5.638    
+    SLICE_X29Y226        FDRE (Hold_CFF2_SLICEM_C_D)
+                                                      0.062     5.700    fpga_core_inst/fifo_tx_mqtt/fifo_inst/wr_ptr_gray_sync1_reg_reg[2]
+  -------------------------------------------------------------------
+                         data arrival                           5.880    
+                         clock arrival                          5.700    
+  -------------------------------------------------------------------
+                         relative delay                         0.180    
+
+
+

@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Wed Dec 16 03:50:25 2020
+# Process ID: 52744
+# Current directory: /proj/fpga/m-kubos/MKUBOS_Designs/udpecho_mcube10fpga/MKUBOS-10GbE/MKUBOS-10GbE.runs/design_1_clk_wiz_0_0_synth_1
+# Command line: vivado -log design_1_clk_wiz_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_clk_wiz_0_0.tcl
+# Log file: /proj/fpga/m-kubos/MKUBOS_Designs/udpecho_mcube10fpga/MKUBOS-10GbE/MKUBOS-10GbE.runs/design_1_clk_wiz_0_0_synth_1/design_1_clk_wiz_0_0.vds
+# Journal file: /proj/fpga/m-kubos/MKUBOS_Designs/udpecho_mcube10fpga/MKUBOS-10GbE/MKUBOS-10GbE.runs/design_1_clk_wiz_0_0_synth_1/vivado.jou
+#-----------------------------------------------------------
+source design_1_clk_wiz_0_0.tcl -notrace

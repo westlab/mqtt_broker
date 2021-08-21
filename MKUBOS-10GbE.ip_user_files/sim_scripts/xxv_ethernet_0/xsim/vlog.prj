@@ -1,0 +1,17 @@
+verilog xil_defaultlib  \
+"../../../../MKUBOS-10GbE.srcs/sources_1/ip/xxv_ethernet_0/ip_0/sim/gtwizard_ultrascale_v1_7_gtye4_channel.v" \
+"../../../../MKUBOS-10GbE.srcs/sources_1/ip/xxv_ethernet_0/ip_0/sim/xxv_ethernet_0_gt_gtye4_channel_wrapper.v" \
+"../../../../MKUBOS-10GbE.srcs/sources_1/ip/xxv_ethernet_0/ip_0/sim/gtwizard_ultrascale_v1_7_gtye4_common.v" \
+"../../../../MKUBOS-10GbE.srcs/sources_1/ip/xxv_ethernet_0/ip_0/sim/xxv_ethernet_0_gt_gtye4_common_wrapper.v" \
+"../../../../MKUBOS-10GbE.srcs/sources_1/ip/xxv_ethernet_0/ip_0/sim/xxv_ethernet_0_gt_gtwizard_gtye4.v" \
+"../../../../MKUBOS-10GbE.srcs/sources_1/ip/xxv_ethernet_0/ip_0/sim/xxv_ethernet_0_gt_gtwizard_top.v" \
+"../../../../MKUBOS-10GbE.srcs/sources_1/ip/xxv_ethernet_0/ip_0/sim/xxv_ethernet_0_gt.v" \
+"../../../../MKUBOS-10GbE.srcs/sources_1/ip/xxv_ethernet_0/xxv_ethernet_v3_0_0/xxv_ethernet_0_wrapper.v" \
+"../../../../MKUBOS-10GbE.srcs/sources_1/ip/xxv_ethernet_0/xxv_ethernet_v3_0_0/xxv_ethernet_0_top.v" \
+"../../../../MKUBOS-10GbE.srcs/sources_1/ip/xxv_ethernet_0/xxv_ethernet_v3_0_0/xxv_ethernet_0_ultrascale_rx_userclk.v" \
+"../../../../MKUBOS-10GbE.srcs/sources_1/ip/xxv_ethernet_0/xxv_ethernet_v3_0_0/xxv_ethernet_0_ultrascale_tx_userclk.v" \
+"../../../../MKUBOS-10GbE.srcs/sources_1/ip/xxv_ethernet_0/xxv_ethernet_0.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+nosort

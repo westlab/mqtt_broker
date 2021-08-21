@@ -1,0 +1,40 @@
+{
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0.19  2019-03-26 bk=1.5019 VDI=41 GEI=35 GUI=JA:9.0 TLS
+#  -string -flagsOSRD
+preplace port CLK100M -pg 1 -lvl 3 -x 950 -y 0 -defaultsOSRD
+preplace port restart_tx_rx -pg 1 -lvl 3 -x 950 -y 30 -defaultsOSRD
+preplace port sys_resetp -pg 1 -lvl 3 -x 950 -y 60 -defaultsOSRD
+preplace port CLK156M -pg 1 -lvl 3 -x 950 -y 370 -defaultsOSRD
+preplace portBus completion_status0 -pg 1 -lvl 0 -x -210 -y 0 -defaultsOSRD
+preplace portBus completion_status1 -pg 1 -lvl 0 -x -210 -y 30 -defaultsOSRD
+preplace portBus completion_status2 -pg 1 -lvl 0 -x -210 -y 60 -defaultsOSRD
+preplace portBus completion_status3 -pg 1 -lvl 0 -x -210 -y 90 -defaultsOSRD
+preplace inst clk_wiz_0 -pg 1 -lvl 2 -x 550 -y 360 -defaultsOSRD
+preplace inst proc_sys_reset_0 -pg 1 -lvl 2 -x 550 -y 760 -defaultsOSRD
+preplace inst smartconnect_0 -pg 1 -lvl 2 -x 550 -y 920 -defaultsOSRD
+preplace inst zynq_ultra_ps_e_0 -pg 1 -lvl 2 -x 550 -y 1080 -defaultsOSRD
+preplace inst clk_sync_0 -pg 1 -lvl 2 -x 550 -y 540 -defaultsOSRD
+preplace inst axi32regs_0 -pg 1 -lvl 2 -x 550 -y 160 -defaultsOSRD
+preplace netloc axi32regs_0_Wport_restart_tx_rx 1 2 1 910 30n
+preplace netloc axi32regs_0_Wport_sys_resetp 1 2 1 930 60n
+preplace netloc clk_sync_0_Rport_completion_status0 1 1 2 70 20 880
+preplace netloc clk_sync_0_Rport_completion_status1 1 1 2 80 30 870
+preplace netloc clk_sync_0_Rport_completion_status2 1 1 2 80 430 850
+preplace netloc clk_sync_0_Rport_completion_status3 1 1 2 90 280 860
+preplace netloc clk_wiz_0_clk_out1 1 1 2 50 290 920
+preplace netloc completion_status0_0_1 1 0 2 N 0 40
+preplace netloc completion_status1_0_1 1 0 2 N 30 30
+preplace netloc completion_status2_0_1 1 0 2 N 60 20
+preplace netloc completion_status3_0_1 1 0 2 N 90 10
+preplace netloc proc_sys_reset_0_interconnect_aresetn 1 1 2 60 640 860
+preplace netloc zynq_ultra_ps_e_0_pl_clk0 1 1 2 90 440 890
+preplace netloc zynq_ultra_ps_e_0_pl_resetn0 1 1 2 80 650 870
+preplace netloc clk_wiz_0_clk_out2 1 2 1 N 370
+preplace netloc smartconnect_0_M00_AXI 1 1 2 90 40 900
+preplace netloc zynq_ultra_ps_e_0_M_AXI_HPM0_FPD 1 1 2 90 660 850
+levelinfo -pg 1 -210 -10 550 950
+pagesize -pg 1 -db -bbox -sgen -440 -170 1100 1310
+"
+}
+0
